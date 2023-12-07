@@ -1,0 +1,77 @@
+[
+  {
+    "LoginType": "email",
+    "LoginValue": "khushiagrawal1804@gmail.com",
+    "Password": "Dream@9556",
+    "AlternateMobile": "9421532418",
+    "WhatsAppNumber": "9422790327",
+    "Category": "General",
+    "AnnualFamilyIncome": 60000,
+    "PersonsWithDisabilities": "No",
+    "ParentalStatus": "Not Applicable",
+    "NumberOfSiblings": 1,
+    "Degree": "B.Tech",
+    "CourseDuration": 4,
+    "InstituteType": "Private",
+    "CurrentAcademicYear": 1,
+    "CurrentAcademicSem": 1,
+    "State": "Maharashtra",
+    "District": "Dhule",
+    "InstitutionName": "R. C. Patel Institute of Technology, Shirpur",
+    "TotalCourseFee": 55000,
+    "PassingYear": 2027,
+    "board11": "Maharashtra Board",
+    "stream": "PCMB(Science)",
+    "instituteType1": "3",
+    "state1": "Maharashtra",
+    "district1": "Dhule",
+    "nameOfInstitute1": "H.R.Patel Kanya Arts & Science Junior College Shirpur",
+    "passingYear1": "2023",
+    "MarksObtain": 530,
+    "TotalMarks": 600,
+    "board2": "Maharashtra Board",
+    "Intype": "Private",
+    "stat": "Maharashtra",
+    "InName": "R.C.Patel English Medium Secondary school, Shirpur",
+    "passyear": "2021",
+    "Marksobtain": 492,
+    "Totalmarks": 500,
+    "Parent": [
+      {
+        "Name": "Agrawal Nilesh Suresh",
+        "Mobile": "9421532418",
+        "AnnualIncome": 60000,
+        "Relation": "Father",
+        "Qualification": "Class 12 Passed",
+        "Occupation": "Farmer"
+      },
+      {
+        "Name": "Agrawal sheetal Nilesh",
+        "Mobile": "9421532418",
+        "AnnualIncome": 0,
+        "Relation": "Mother",
+        "Qualification": "Class 12 Passed",
+        "Occupation": "Housewife/Homemaker"
+      }
+    ],
+    "Reference": [
+      {
+        "Name": "Sujay",
+        "Mobile": "9373606334",
+        "Relation": "Others"
+      },
+      {
+        "Name": "Rahul",
+        "Mobile": "7767080838",
+        "Relation": "Others"
+      }
+    ],
+    "bank": [
+      {
+        "accountHolderName": "Agrawal Khushi Nilesh",
+        "accountNumber": "1600104000110983",
+        "ifscCode": "IBKL0001600"
+      }
+    ],
+  }
+]

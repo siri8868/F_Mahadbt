@@ -1,0 +1,128 @@
+package JSonfiles;
+
+import java.io.File;
+import java.io.FileReader;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.io.FileHandler;
+
+import net.sourceforge.tess4j.TesseractException;
+import net.sourceforge.tess4j.ITesseract;
+import net.sourceforge.tess4j.Tesseract;
+
+public class JSONDataUploadTest {
+
+    public static void main(String[] args) throws Exception {
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Shravani\\OneDrive\\Pictures\\Auto\\Forstu_Automation\\Browser Extention\\chromedriver.exe");
+
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
+        WebDriver driver = new ChromeDriver(options);
+        driver.manage().window().maximize();
+
+        // Open URL Of "Vidyasarthi"
+        driver.get("https://www.vidyasaarathi.co.in/Vidyasaarathi/index");
+
+        // Handle the PopUp
+        driver.findElement(By.xpath("//*[@id=\"modalSocial\"]/div/div/div[3]/a")).click();
+
+        // Login to Vidyasarthi
+        driver.findElement(By.xpath("//*[@id=\"bs-example-navbar-collapse-1\"]/ul/li[8]/a")).click();
+
+        // Switch to the new page
+        String mainWindowHandle = driver.getWindowHandle();
+        for (String handle : driver.getWindowHandles()) {
+            if (!handle.equals(mainWindowHandle)) {
+                driver.switchTo().window(handle);
+                break;
+            }
+        }
+
+        // Fill in the login credentials
+        driver.findElement(By.id("username")).sendKeys("shravanidhumal8868@gmail.com");
+        driver.findElement(By.name("password")).sendKeys("Shravani@8868");
+        Thread.sleep(2000);
+
+        // Capture CAPTCHA screenshot
+        File src = driver.findElement(By.xpath("//*[@id=\"command\"]/div[8]/div[1]/div")).getScreenshotAs(OutputType.FILE);
+        String path = System.getProperty("user.dir") + "/screenshot/capcha.png";
+        FileHandler.copy(src, new File(path));
+
+        // Perform OCR on CAPTCHA image
+        ITesseract tesseract = new Tesseract();
+        tesseract.setDatapath("C:\\Users\\Shravani\\OneDrive\\Pictures\\Auto\\Forstu_Automation\\Elicpse\\123\\tessdata");
+        String captcha = tesseract.doOCR(new File("C:\\Users\\Shravani\\OneDrive\\Pictures\\Auto\\Forstu_Automation\\Elicpse\\123\\screenshot\\capcha.png")).replaceAll("[^a-zA-Z0-9]", " ");
+
+        Thread.sleep(2000);
+
+        // Enter the CAPTCHA value
+        driver.findElement(By.xpath("//*[@id=\"txtInput\"]")).sendKeys(captcha);
+
+        Thread.sleep(2000);
+
+        // Submit the login form
+        WebElement submitButton = driver.findElement(By.id("login"));
+        submitButton.click();
+        //close button popup
+         driver.findElement(By.xpath("//*[@id=\"modalonlinetest\"]/div/div/div[2]/a")).click();
+         //click on profile button 
+         driver.findElement(By.xpath("//*[@id=\"studentMenu\"]/li[3]/a")).click();
+         
+         Thread.sleep(2000);
+        // Read the JSON file
+        JSONParser parser = new JSONParser();
+        JSONArray jsonArray = (JSONArray) parser.parse(new FileReader("C:\\Users\\Shravani\\OneDrive\\Pictures\\Auto\\Forstu_Automation\\Elicpse\\123\\src\\main\\java\\JSonfiles\\Vidya.json"));
+
+        for (Object obj : jsonArray) {
+            JSONObject userData = (JSONObject) obj;
+
+            // Extract user data from JSON object
+            String name = (String) userData.get("name");
+            String dateOfBirth = (String) userData.get("date_of_birth");
+            String gender = (String) userData.get("gender");
+            String category = (String) userData.get("category");
+            String title = (String) userData.get("title");
+            String fatherName = (String) userData.get("father_name");
+            String guardian = (String) userData.get("guardian");
+            String occupation = (String) userData.get("occupation");
+            String contactNumber = (String) userData.get("contact_number");
+            Long salary = (Long) userData.get("salary");
+            String address = (String) userData.get("address");
+            JSONObject emergencyContact = (JSONObject) userData.get("emergency_contact");
+            String primaryEmergencyContact = (String) emergencyContact.get("primary");
+            String secondaryEmergencyContact = (String) emergencyContact.get("secondary");
+
+            // Perform data upload to the URL
+            // Implement your upload logic here
+
+            // Output the uploaded data
+            System.out.println("Uploaded Data:");
+            System.out.println("Name: " + name);
+            System.out.println("Date of Birth: " + dateOfBirth);
+            System.out.println("Gender: " + gender);
+            System.out.println("Category: " + category);
+            System.out.println("Title: " + title);
+            System.out.println("Father Name: " + fatherName);
+            System.out.println("Guardian: " + guardian);
+            System.out.println("Occupation: " + occupation);
+            System.out.println("Contact Number: " + contactNumber);
+            System.out.println("Salary: " + salary);
+            System.out.println("Address: " + address);
+            System.out.println("Emergency Contact (Primary): " + primaryEmergencyContact);
+            System.out.println("Emergency Contact (Secondary): " + secondaryEmergencyContact);
+            System.out.println();
+        }
+
+        // Logout
+        // Implement your logout logic here
+
+        driver.quit();
+    }
+}

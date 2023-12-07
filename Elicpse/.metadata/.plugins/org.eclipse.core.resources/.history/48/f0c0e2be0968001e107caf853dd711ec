@@ -1,0 +1,30 @@
+package Excel_Data;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class Renewal_MahaDBT_WithAllDocument {
+
+	public static void main(String[] args) {
+
+		
+		 System.setProperty("webdriver.chrome.driver", "C:\\Users\\Shravani\\OneDrive\\Pictures\\Auto\\Forstu_Automation\\Browser Extention\\chromedriver.exe");
+	       
+	        ChromeOptions options = new ChromeOptions();
+			options.addArguments("--remote-allow-origins=*");
+	        options.addArguments("--disable-notifications");
+	        WebDriver driver = new ChromeDriver(options);
+	        driver.manage().window().maximize();
+	   
+	        
+	        
+	        
+	        
+	        
+		
+		
+		
+	}
+
+}

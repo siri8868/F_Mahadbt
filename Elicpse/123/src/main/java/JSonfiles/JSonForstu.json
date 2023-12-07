@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Rima Sha",
+    "familyBackground": "There are 4 member in my family. My Father is a farmer",
+    "gender": "Female",
+    "hobby": "Singing"
+  },
+  {
+    "name": "Adesh Birla",
+    "familyBackground": "I am only child in my family. I am studying. My father is a worker",
+    "gender": "Male",
+    "hobby": "Football"
+  },
+  {
+    "name": "Tina Ram",
+    "familyBackground": "There are 3 members in my family. I don't have a father, and my mother is a hospital worker",
+    "gender": "Female",
+    "hobby": "Cooking"
+  },
+  {
+    "name": "Shilpa Kumar",
+    "familyBackground": "I don't have a family. I grew up in an orphanage.",
+    "gender": "Female",
+    "hobby": "Football"
+  },
+  {
+    "name": "Ram Gajal",
+    "familyBackground": "My father is an office worker, and we are 3 children in my family",
+    "gender": "Male",
+    "hobby": "Cricket"
+  }
+]

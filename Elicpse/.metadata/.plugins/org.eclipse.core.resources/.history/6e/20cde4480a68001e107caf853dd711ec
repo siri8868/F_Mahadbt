@@ -1,0 +1,50 @@
+package Excel_Data;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class Renewal_MahaDBT_WithAllDocument {
+
+	public static void main(String[] args) throws Exception {
+
+		
+		 System.setProperty("webdriver.chrome.driver", "C:\\Users\\Shravani\\OneDrive\\Pictures\\Auto\\Forstu_Automation\\Browser Extention\\chromedriver.exe");
+	       
+	        ChromeOptions options = new ChromeOptions();
+			options.addArguments("--remote-allow-origins=*");
+	        options.addArguments("--disable-notifications");
+	        WebDriver driver = new ChromeDriver(options);
+	        driver.manage().window().maximize();
+	   
+	        File src = new File("C:\\Users\\Shravani\\Desktop\\Excel_data\\MAHADBT.xlsx");
+	        FileInputStream fis = new FileInputStream(src);
+	        
+	        XSSFWorkbook xsf = new XSSFWorkbook(fis);
+	        XSSFSheet sheet = xsf.getSheetAt(0);
+	        Workbook workbook = new XSSFWorkbook();   
+	        
+	        
+	        
+	        for (int rowNum = 1; rowNum <= sheet.getLastRowNum(); rowNum++) {
+	            XSSFRow row = sheet.getRow(rowNum);
+	            
+	         
+	            String Login  = row.getCell(0).getStringCellValue();
+	            String Password = row.getCell(1).getStringCellValue();   
+	        
+	        
+		
+		
+	        }	
+	}
+
+}

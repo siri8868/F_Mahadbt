@@ -1,0 +1,133 @@
+[
+  {
+    "LoginType": "email",
+    "LoginValue": "sushantgurme@gmail.com",
+    "Password": "Sushant@75",
+    "AlternateMobile": "9878767867",
+    "WhatsAppNumber": "7678985640",
+    "DateOfBirth": "06/08/2001",
+    "Category": "OBC",
+    "adharcard": "444444999999",
+    "AnnualFamilyIncome": 50007,
+    "PersonsWithDisabilities": "No",
+    "ParentalStatus":"Orphan",
+    "NumberOfSiblings": 2,
+    "AddressLine":"Latur",
+    "StateName": "Maharashtra",
+    "DistrictName": "Latur",
+    "CityName": "Shirpur",
+    "Pincode": "412208",
+    "Degree": "B.Com",
+    "CourseDuration": 3,
+    "InstituteType": "Private",
+    "CurrentAcademicYear": 2,
+    "CurrentAcademicSem": 4,
+    "State": "Maharashtra",
+    "District": "Latur",
+    "InstitutionName": "MODERN COLLEGE",
+    "TotalCourseFee": 56000,
+    "PassingYear":2024,
+    "board11": "Maharashtra Board",
+    "stream": "PCM",
+    "instituteType1":"3",
+    "state1": "Maharashtra",
+    "district1":"Pune",
+    "nameOfInstitute1":"LRG Palande College Pune",
+    "passingYear1": "2020",
+    "MarksObtain": 392,
+    "TotalMarks": 600,
+    "board2":"Maharashtra Board",
+    "Intype":"Private",
+    "stat": "Maharashtra",
+    "InName":"S.B.Dhavkhare Vidyalay",
+    "passyear":"2012",
+    "Marksobtain":420,
+    "Totalmarks":500,  
+    "Parents": [
+  {
+    "Name": "Re Gurme",
+    "Mobile": "7887679890",
+    "AnnualIncome": 70000,
+    "Relation": "Father",
+    "Qualification":"Class 12",
+    "Occupation": "Farmer"
+  },
+  {
+    "Name": "Sima Gurme",
+    "Mobile": "8987679890",
+    "AnnualIncome": 10000,
+    "Relation": "Mother",
+    "Qualification":"Class 12",
+    "Occupation": "Housewife"
+  }
+  ],
+  "bank": [
+  {
+  "accountHolderName":"Jay adhalakar",
+  "accountNumber": "78765645341",
+  "ifscCode": "HDFC0006209"
+  }  
+  ],     
+}
+  {
+    "LoginType": "mobile",
+    "LoginValue": "8793776646",
+    "Password": "Sujay@87",
+    "AlternateMobile": "7865787659",
+    "WhatsAppNumber": "9876678978",
+    "AnnualFamilyIncome": 50000,
+    "PersonsWithDisabilities": "No",
+    "ParentalStatus": "Orphan",
+    "NumberOfSiblings": 3,
+    "Degree": "B.Pharm",
+    "CourseDuration": 4,
+    "InstituteType": "Private",
+    "CurrentAcademicYear": 3,
+    "CurrentAcademicSem": 6,
+    "State": "Maharashtra",
+    "District": "Pune",
+    "InstitutionName": "College Of Nursing, Pune",
+    "TotalCourseFee": 60000,
+    "PassingYear": 2024,
+    "board11": "Maharashtra Board",
+    "stream": "PCMB",
+    "instituteType1": "3",
+    "state1": "Maharashtra",
+    "district1": "Pune",
+    "nameOfInstitute1": "LRG Palande College Pune",
+    "passingYear1": "2018",
+    "MarksObtain": 390,
+    "TotalMarks": 600,
+    "Parents": [
+      {
+        "Name": "Ram Joshi",
+        "Mobile": "9878656789",
+        "AnnualIncome": 80000,
+        "Relation": "Father",
+        "Occupation": "Farmer"
+      },
+      {
+        "Name": "Rima Gurme",
+        "Mobile": "9087678998",
+        "AnnualIncome": 10000,
+        "Relation": "Mother",
+        "Occupation": "Chef"
+      },
+      {
+        "Name2": "Ram Andhalkar",
+        "Mobile2": "8987678965",
+        "Relation2": "Brother"
+      },
+      {
+        "Name3": "Tina Andhalkar",
+        "Mobile3": "8767899065",
+        "Relation3": "Sister"
+      },
+      {
+        "Account_Holder_Name": "Jayraj Andhalkar",
+        "Account_Number": "67568798765",
+        "IFSC_Code": "HDFC0000007"
+      }
+    ]
+  }
+]

@@ -1,0 +1,77 @@
+package Excel_Data;
+
+import org.apache.poi.sl.usermodel.Sheet;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.poi.ss.usermodel.Row;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.File;
+import org.openqa.selenium.interactions.Actions;
+
+
+
+public class Reliance_foundation {
+
+	public static void main(String[] args) throws IOException {
+
+		
+		 System.setProperty("webdriver.chrome.driver", "C:\\Users\\Shravani\\OneDrive\\Pictures\\Auto\\Forstu_Automation\\Browser Extention\\chromedriver.exe");
+
+	        ChromeOptions options = new ChromeOptions();
+	        options.addArguments("--remote-allow-origins=*");
+	        WebDriver driver = new ChromeDriver(options);
+	        driver.manage().window().maximize();
+	        
+	        File src = new File("C:\\Users\\Shravani\\Desktop\\Excel_data\\RelainceFoundation.xlsx");
+	        FileInputStream fis = new FileInputStream(src);
+	        
+	        XSSFWorkbook xsf = new XSSFWorkbook(fis);
+	        XSSFSheet sheet = xsf.getSheetAt(0);
+	        
+	        
+	        
+	        
+	        
+	        for (int rowNum = 1; rowNum <= sheet.getLastRowNum(); rowNum++) {
+	            XSSFRow row = sheet.getRow(rowNum);
+	            
+	            // Assuming your Excel sheet has columns for username and password in the first and second columns.
+	            String username = row.getCell(0).getStringCellValue();
+	            String password = row.getCell(1).getStringCellValue();
+	        
+	        
+	        
+		        driver.get("https://bpm.jio.com/Identity/Sts/Forms/Account/Login?ReturnUrl=%2fIdentity%2fsts%2fForms%2fwsfed%3fwa%3dwsignin1.0%26wtrealm%3dhttps%253a%252f%252fscholarshipapplication.reliancefoundation.org%252fProgrammes%252f%26wctx%3drm%253d1%2526id%253dk2passive%2526ru%253d_trust%25252fspauthorize.aspx%25253fsession%25253d470bf4d5-1f31-4106-a937-ec52decba26b%252526_spInt%25253d1%26wct%3d2023-09-17T04%253a07%253a45Z%26wreply%3dhttps%253a%252f%252fscholarshipapplication.reliancefoundation.org%252fProgrammes%252f&wa=wsignin1.0&wtrealm=https%3a%2f%2fscholarshipapplication.reliancefoundation.org%2fProgrammes%2f&wctx=rm%3d1%26id%3dk2passive%26ru%3d_trust%252fspauthorize.aspx%253fsession%253d470bf4d5-1f31-4106-a937-ec52decba26b%2526_spInt%253d1&wct=2023-09-17T04%3a07%3a45Z&wreply=https%3a%2f%2fscholarshipapplication.reliancefoundation.org%2fProgrammes%2f");
+
+	            
+		        driver.findElement(By.id("UserName")).sendKeys(username);
+	            driver.findElement(By.id("Password")).sendKeys(password);
+	            
+	            // Click on Login Button 
+	            
+	            driver.findElement(By.id("SignInButton")).click();
+	            
+	            WebElement elementToHover = driver.findElement(By.xpath("close"));
+	            Actions actions = new Actions(driver);
+
+	            // Perform the mouse hover action
+	            actions.moveToElement(elementToHover).perform();
+	            
+	            WebElement subMenuItem = driver.findElement(By.className("close"));
+	            subMenuItem.click();
+	        
+		
+	        }
+	        
+	  
+	        
+	}
+}

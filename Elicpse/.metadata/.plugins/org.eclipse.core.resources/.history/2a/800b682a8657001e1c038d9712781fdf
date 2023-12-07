@@ -1,0 +1,209 @@
+package Excel_Data;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.time.Duration;
+
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class EXCEL_HDFC_Undergraduate {
+
+	public static void main(String[] args) throws IOException {
+		
+		
+		  ChromeOptions options = new ChromeOptions();
+	        options.addArguments("--remote-allow-origins=*");
+	        WebDriver driver = new ChromeDriver(options);
+	        driver.manage().window().maximize();
+
+	        
+	                
+	        File src = new File("C:\\Users\\Shravani\\Desktop\\Excel_data\\HDFC_Undergraduate.xlsx");
+	        FileInputStream fis = new FileInputStream(src);
+	        
+	        XSSFWorkbook xsf = new XSSFWorkbook(fis);
+	        XSSFSheet sheet = xsf.getSheetAt(0);	
+	        
+	        
+	        for (int rowNum = 1; rowNum <= sheet.getLastRowNum(); rowNum++) {
+	            XSSFRow row = sheet.getRow(rowNum);
+	            
+	            // Assuming your Excel sheet has columns for username and password in the first and second columns.
+	            String Login  = row.getCell(0).getStringCellValue();
+	            String Password = row.getCell(1).getStringCellValue(); 
+	            Double AlternateMobile = row.getCell(2).getNumericCellValue(); 
+	            Double WhatsAppNumber = row.getCell(3).getNumericCellValue(); 
+	            Double DateOfBirth = row.getCell(4).getNumericCellValue();
+	            Double AnnualFamilyIncome = row.getCell(5).getNumericCellValue();
+	            String personsWithDisabilities  = row.getCell(6).getStringCellValue();
+	            String parentalStatus  = row.getCell(7).getStringCellValue();
+	            int numberOfSiblings = (int) row.getCell(8).getNumericCellValue();
+	            String degree = row.getCell(9).getStringCellValue();
+	 //           Double courseDuration = row.getCell(10).getNumericCellValue();
+	            
+	            
+	            
+	            
+	            
+	            
+	            
+	          //URL : 	        
+		        driver.get("https://www.buddy4study.com/application/HDFC45/instruction");
+	//PopUp : 
+		        
+		        // Handle the PopUp
+		        try {
+		            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		            WebElement noThanksButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("onesignal-slidedown-cancel-button")));
+		            noThanksButton.click();
+		        } catch (Exception e) {
+		            e.printStackTrace();
+		        } 
+	            
+	         // Click on Apply Now button:
+		        driver.findElement(By.xpath("//*[@id=\"__next\"]/section/main/div/div/div[1]/section/article[2]/article/button[1]")).click();
+//Login :
+		        driver.findElement(By.cssSelector(".loginWithPopup_email__19PBS")).click();
+
+		        driver.findElement(By.id("emailid")).click();
+ 	            driver.findElement(By.id("emailid")).sendKeys(Login );
+	            
+//Password : 
+ 	           WebElement passwordElement = driver.findElement(By.id("password")); 
+               passwordElement.sendKeys(Password);
+               
+// Login click: 
+   	          driver.findElement(By.cssSelector(".loginWithMobileEmailPopup_btn__31NqD")).click();  
+	          
+//Clicking On Ok button :
+ 	          // Create a WebDriverWait instance with a timeout of 10 seconds
+ 	          WebDriverWait waitt = new WebDriverWait(driver, Duration.ofSeconds(20));
+
+ 	          // Wait until the OK button is clickable
+ 	          WebElement okButton = waitt.until(ExpectedConditions.elementToBeClickable(By.className("swal-button--confirm")));
+
+ 	          // Create a JavascriptExecutor instance
+ 	          JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+
+ 	          // Click the OK button using JavaScript
+ 	          jsExecutor.executeScript("arguments[0].click();", okButton);
+
+ //Click on Start Application : 
+ 	          WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(20));
+ 	          WebElement startApplicationButton = wait2.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//article[@class='applicationInstructions_ctrlWrapper__17X1G']//button[contains(text(),'START APPLICATION')]")));
+ 	         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", startApplicationButton); 
+             
+              WebDriverWait waitr = new WebDriverWait(driver, Duration.ofSeconds(10));
+              WebElement alternateMobileElement = waitr.until(ExpectedConditions.visibilityOfElementLocated(By.id("alternateMobile")));
+              alternateMobileElement.sendKeys(String.valueOf(AlternateMobile));
+
+              WebDriverWait waittt = new WebDriverWait(driver, Duration.ofSeconds(10));
+              WebElement WhatappNo = waittt.until(ExpectedConditions.visibilityOfElementLocated(By.id("whatsAppMobile")));
+              WhatappNo.sendKeys(String.valueOf(WhatsAppNumber));
+   	          
+              WebDriverWait waitti = new WebDriverWait(driver, Duration.ofSeconds(10));
+              WebElement DOB = waitti.until(ExpectedConditions.visibilityOfElementLocated(By.id("dob")));
+              DOB.sendKeys(String.valueOf(DateOfBirth));
+              
+ //Family income : 
+              driver.findElement(By.id("familyIncome")).clear();
+              driver.findElement(By.id("familyIncome")).click();
+              driver.findElement(By.id("familyIncome")).sendKeys(String.valueOf(String.valueOf(AnnualFamilyIncome)));
+              driver.findElement(By.id("familyIncome")).sendKeys(Keys.TAB);
+              
+              WebDriverWait waitA = new WebDriverWait(driver, Duration.ofSeconds(10));
+              WebElement disabledElement = waitA.until(ExpectedConditions.elementToBeClickable(By.id("disabled")));
+              JavascriptExecutor jsExecutorA = (JavascriptExecutor) driver;
+              jsExecutorA.executeScript("arguments[0].click();", disabledElement);
+              WebElement dropdownElement = waitA.until(ExpectedConditions.visibilityOfElementLocated(By.id("disabled")));
+              Select dis = new Select(dropdownElement);
+              dis.selectByVisibleText(personsWithDisabilities);
+              
+  // Set parental status
+              Select parentstatus = new Select(driver.findElement(By.id("otherPersonalDetails")));
+              parentstatus.selectByVisibleText(parentalStatus);              
+              driver.findElement(By.id("otherPersonalDetails")).sendKeys(Keys.TAB);
+              
+              
+  // Set number of siblings
+        //      Select nosibling = new Select(driver.findElement(By.id("siblingsNo")));
+        //      nosibling.selectByVisibleText(String.valueOf(numberOfSiblings));
+              
+           /*   
+              WebDriverWait waitE = new WebDriverWait(driver, Duration.ofSeconds(10)); 
+              WebElement dropdownElementE = waitE.until(ExpectedConditions.elementToBeClickable(By.id("siblingsNo")));
+              Select nosibling = new Select(dropdownElementE);
+              nosibling.selectByVisibleText(String.valueOf(numberOfSiblings));
+              JavascriptExecutor js = (JavascriptExecutor) driver;
+              js.executeScript("arguments[0].scrollIntoView(true);", dropdownElementE);
+           
+              WebDriverWait waitE = new WebDriverWait(driver, Duration.ofSeconds(10));
+              WebElement dropdownElementE = waitE.until(ExpectedConditions.elementToBeClickable(By.id("siblingsNo")));
+              JavascriptExecutor jsExecutorE = (JavascriptExecutor) driver;
+              jsExecutorE.executeScript("arguments[0].click();", dropdownElementE);
+         //     WebElement dropdownElementE = waitE.until(ExpectedConditions.visibilityOfElementLocated(By.id("siblingsNo")));
+              Select js  = new Select(dropdownElementE);
+              js.selectByIndex(numberOfSiblings);
+            */     
+              
+              
+              
+              
+ //Save option : 
+              /*
+            WebDriverWait waitB = new WebDriverWait(driver, Duration.ofSeconds(10)); 
+            WebElement buttonElement = waitB.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div/section[2]/section/section[2]/section/section/section[3]/article[1]/section/article/article[9]/article/input")));
+	        JavascriptExecutor jsExecutorc = (JavascriptExecutor) driver;
+            jsExecutorc.executeScript("arguments[0].click();", buttonElement);    
+*/
+            
+                                            
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+
+//Education Details  Section : 
+//Graduation : 
+            /*   
+              WebDriverWait waitClick = new WebDriverWait(driver, Duration.ofSeconds(10));
+              WebElement elementToClick = waitClick.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div/section[2]/section/section[2]/section/section/section[3]/article[2]/section/article[2]/article/article/article[1]/article/span/span/i")));
+              JavascriptExecutor jsExecutorClick = (JavascriptExecutor) driver;
+              jsExecutorClick.executeScript("arguments[0].click();", elementToClick);
+            */ 
+ //Degree :
+              WebDriverWait waitm = new WebDriverWait(driver, Duration.ofSeconds(10));
+              WebElement degreeDropdown = waitm.until(ExpectedConditions.elementToBeClickable(By.id("degree")));
+              Select degreeSelect = new Select(degreeDropdown);
+              degreeSelect.selectByVisibleText(degree);
+              JavascriptExecutor jsExecutorn = (JavascriptExecutor) driver;
+              jsExecutorn.executeScript("console.log('JavaScript executed after selecting an option');");
+              
+// Course Duration:
+       /*       WebDriverWait waitx = new WebDriverWait(driver, Duration.ofSeconds(10));
+              By dropdownLocator1 = By.id("courseDuration");
+              WebElement dropdownElement2 = waitx.until(ExpectedConditions.elementToBeClickable(dropdownLocator1));
+              Select durationDropdown = new Select(dropdownElement2);
+              durationDropdown.selectByValue(String.valueOf(courseDuration));              
+          */    
+              
+              
+              
+              
+              
+              
+   	          
+
+	}
+	}
+}

@@ -1,0 +1,452 @@
+[
+  {
+    "LoginType": "email",
+    "LoginValue": "khushiagrawal1804@gmail.com",
+    "Password": "Dream@9556",
+    "AlternateMobile": "9421532418",
+    "WhatsAppNumber": "9422790327",
+    "Category": "General",
+    "AnnualFamilyIncome": 60000,
+    "PersonsWithDisabilities": "No",
+    "ParentalStatus": "Not Applicable",
+    "NumberOfSiblings": 1,
+    "Degree": "B.Tech",
+    "CourseDuration": 4,
+    "InstituteType": "Government",
+    "CurrentAcademicYear": 1,
+    "CurrentAcademicSem": 1,
+    "State": "Maharashtra",
+    "District": "Dhule",
+    "InstitutionName": "R. C. Patel Institute of Technology, Shirpur",
+    "TotalCourseFee": 55000,
+    "PassingYear": 2027,
+    "board11": "Maharashtra Board",
+    "stream": "PCMB(Science)",
+    "instituteType1":"3",
+    "state1": "Maharashtra",
+    "district1": "Dhule",
+    "nameOfInstitute1": "H.R.Patel Kanya Arts & Science Junior College Shirpur",
+    "passingYear1": "2023",
+    "MarksObtain": 530,
+    "TotalMarks": 600,
+    "board2": "Maharashtra Board",
+    "Intype":"Private",
+    "stat": "Maharashtra",
+    "InName": "R.C.Patel English Medium Secondary school, Shirpur",
+    "passyear": "2021",
+    "Marksobtain": 492,
+    "Totalmarks": 500,
+    "Parent": [
+      {
+        "Name": "Agrawal Nilesh Suresh",
+        "Mobile":"9421532418",
+        "AnnualIncome": 60000,
+        "Relation": "Father",
+        "Qualification": "Class 12 Passed",
+        "Occupation": "Farmer"
+      },
+      {
+        "Name": "Agrawal sheetal Nilesh",
+        "Mobile":"9421532418",
+        "AnnualIncome": 0,
+        "Relation": "Mother",
+        "Qualification": "Class 12 Passed",
+        "Occupation": "Housewife/Homemaker"
+      }
+    ],
+    "Reference": [
+      {
+        "Name": "Sujay",
+        "Mobile": "9373606334",
+        "Relation": "Others"
+      },
+      {
+        "Name": "Rahul",
+        "Mobile": "7767080838",
+        "Relation": "Others"
+      }
+    ],
+    "bank": [
+      {
+        "accountHolderName": "Agrawal Khushi Nilesh",
+        "accountNumber": "1600104000110983",
+        "ifscCode": "IBKL0001600"
+      }
+    ]
+  },
+  {
+    "LoginType": "email",
+    "LoginValue": "hansikapatil34@gmail.com",
+    "Password": "Dream@9556",
+    "AlternateMobile":"9420214831",
+    "WhatsAppNumber":"9309060146",   
+    "Category": "OBC",
+    "AnnualFamilyIncome": 35000,
+    "PersonsWithDisabilities": "No",
+    "ParentalStatus": "Not Applicable",
+    "NumberOfSiblings": 2,
+    "Degree": "B.Tech",
+    "CourseDuration": 4,
+    "InstituteType":"Private",
+    "CurrentAcademicYear": 1,
+    "CurrentAcademicSem": 1,
+    "State": "Maharashtra",
+    "District": "Dhule",
+    "InstitutionName": "R. C. Patel Institute of Technology, Shirpur",
+    "TotalCourseFee": 55000,
+    "PassingYear": 2027,
+    "board11": "Maharashtra Board",
+    "stream": "PCMB(Science)",
+    "instituteType1":"3",
+    "state1": "Maharashtra",
+    "district1": "Dhule",
+    "nameOfInstitute1": "H.R.Patel jr.college",
+    "passingYear1": "2023",
+    "MarksObtain": 530,
+    "TotalMarks": 600,
+    "board2": "Maharashtra Board",
+    "Intype": "Private",
+    "stat": "Maharashtra",
+    "InName": "H.R.Patil kanya uchha madhyamik vidyalay shirpur",
+    "passyear":"2021",
+    "Marksobtain": 494,
+    "Totalmarks": 500,
+    "Parent": [
+      {
+        "Name": "Vijay Lotan Patil",
+        "Mobile":"9420214831",
+        "AnnualIncome": 35000,
+        "Relation": "Father",
+        "Qualification": "Post Graduation",
+        "Occupation": "Others"
+      },
+      {
+        "Name": "Vaishali Vijay Patil",
+        "Mobile":"9420214831",
+        "AnnualIncome": 0,
+        "Relation": "Mother",
+        "Qualification": "Graduation",
+        "Occupation": "Housewife/Homemaker"
+      }
+    ],
+    "Reference": [
+      {
+        "Name": "Sujay",
+        "Mobile": "9373606334",
+        "Relation": "Others"
+      },
+      {
+        "Name": "Rahul",
+        "Mobile": "7767080838",
+        "Relation": "Others"
+      }
+    ],
+    "bank": [
+      {
+        "accountHolderName": "Hansika Vijay Patil",
+        "accountNumber":"567302010027165",
+        "ifscCode": "UBIN0556734"
+      }
+    ]
+  },
+  {
+    "LoginType": "email",
+    "LoginValue": "sanikabaviskar23@gmail.com",
+    "Password": "Dream@9556",
+    "AlternateMobile": 9420805367,
+    "WhatsAppNumber": 8767851097, 
+    "Category": "OBC",
+    "AnnualFamilyIncome": 35000,
+    "PersonsWithDisabilities": "No",
+    "ParentalStatus": "Single Parent ",
+    "NumberOfSiblings": 1,
+    "Degree": "B.Tech",
+    "CourseDuration": 4,
+    "InstituteType": 2,
+    "CurrentAcademicYear": 1,
+    "CurrentAcademicSem": 1,
+    "State": "Maharashtra",
+    "District": "Dhule",
+    "InstitutionName": "R. C. Patel Institute of Technology, Shirpur",
+    "TotalCourseFee": 55000,
+    "PassingYear": 2027,
+    "board11": "Maharashtra Board",
+    "stream": "PCMB(Science)",
+    "instituteType1": 3,
+    "state1": "Maharashtra",
+    "district1": "Dhule",
+    "nameOfInstitute1": "H.R.Patel girls Jr college,shirpur",
+    "passingYear1": 2023,
+    "MarksObtain": 542,
+    "TotalMarks": 600,
+    "board2": "Maharashtra Board",
+    "Intype": 3,
+    "stat": "Maharashtra",
+    "InName": "H.R.Patel girls secondary school shirpur",
+    "passyear": 2021,
+    "Marksobtain": 489,
+    "Totalmarks": 500,
+    "Parent": [
+      {
+        "Name": "Vijay Bhaskar patil",
+        "Mobile": 9420805367,
+        "AnnualIncome": 35000,
+        "Relation": "Father",
+        "Qualification": "Graduation",
+        "Occupation": "Farmer"
+      },
+      {
+        "Name": "Nita vijay patil",
+        "Mobile": 9420805367,
+        "AnnualIncome": 0,
+        "Relation": "Mother",
+        "Qualification": "Class 12 Passed",
+        "Occupation": "Housewife/Homemaker"
+      }
+    ],
+    "Reference": [
+      {
+        "Name": "Sujay",
+        "Mobile": "9373606334",
+        "Relation": "Others"
+      },
+      {
+        "Name": "Rahul",
+        "Mobile": "7767080838",
+        "Relation": "Others"
+      }
+    ],
+    "bank": [
+      {
+        "accountHolderName": "Sanika vijay patil",
+        "accountNumber": 94500100062024,
+        "ifscCode": "BARB0VJSPUR"
+      }
+    ]
+  },
+  {
+    "LoginType": "email",
+    "LoginValue": "arsh20inpathan@gmail.com",
+    "Password": "#Arsh2003",
+    "AlternateMobile": 7020318388,
+    "WhatsAppNumber": 8625927518,  
+    "Category": "General",
+    "AnnualFamilyIncome": 80000,
+    "PersonsWithDisabilities": "No",
+    "ParentalStatus": "Not Applicable",
+    "NumberOfSiblings": 2,
+    "Degree": "B.Tech",
+    "CourseDuration": 4,
+    "InstituteType": 2,
+    "CurrentAcademicYear": 1,
+    "CurrentAcademicSem": 1,
+    "State": "Maharashtra",
+    "District": "Dhule",
+    "InstitutionName": "R. C. Patel Institute of Technology, Shirpur",
+    "TotalCourseFee": 55000,
+    "PassingYear": 2027,
+    "board11": "Maharashtra Board",
+    "stream": "PCMB(Science)",
+    "instituteType1": 3,
+    "state1": "Maharashtra",
+    "district1": "Dhule",
+    "nameOfInstitute1": "R C Patel Junior college Shirpur",
+    "passingYear1": 2021,
+    "MarksObtain": 540,
+    "TotalMarks": 600,
+    "board2": "Maharashtra Board",
+    "Intype": 3,
+    "stat": "Maharashtra",
+    "InName": "R. C. Patel Urdu Primary School Shirpur",
+    "passyear": 2019,
+    "Marksobtain": 352,
+    "Totalmarks": 500,
+    "Parent": [
+      {
+        "Name": "Pathan Maheboob Khan Nabiyar Khan",
+        "Mobile": 7020318388,
+        "AnnualIncome": 80000,
+        "Relation": "Father",
+        "Qualification": "Class 11",
+        "Occupation": "Labourer"
+      },
+      {
+        "Name": "Pathan Shamina Maheboob Khan",
+        "Mobile": 7020318388,
+        "AnnualIncome": 0,
+        "Relation": "Mother",
+        "Qualification": "Class 11",
+        "Occupation": "Housewife/Homemaker"
+      }
+    ],
+    "Reference": [
+      {
+        "Name": "Sujay",
+        "Mobile": "9373606334",
+        "Relation": "Others"
+      },
+      {
+        "Name": "Rahul",
+        "Mobile": "7767080838",
+        "Relation": "Others"
+      }
+    ],
+    "bank": [
+      {
+        "accountHolderName": "PATHAN ARSHIN MAHEBOOB",
+        "accountNumber": 20261793387,
+        "ifscCode": "MAHB0000349"
+      }
+    ]
+  },
+  {
+    "LoginType": "email",
+    "LoginValue": "kishord1311@gmail.com",
+    "Password": "Dream@9556",
+    "AlternateMobile": 8275591660,
+    "WhatsAppNumber": 9975660467,
+    "Category": "OBC",
+    "AnnualFamilyIncome": 40000,
+    "PersonsWithDisabilities": "No",
+    "ParentalStatus": "Not Applicable",
+    "NumberOfSiblings": 2,
+    "Degree": "B.Tech",
+    "CourseDuration": 4,
+    "InstituteType": 2,
+    "CurrentAcademicYear": 1,
+    "CurrentAcademicSem": 1,
+    "State": "Maharashtra",
+    "District": "Dhule",
+    "InstitutionName": "R. C. Patel Institute of Technology, Shirpur",
+    "TotalCourseFee": 55000,
+    "PassingYear": 2027,
+    "board11": "Maharashtra Board",
+    "stream": "PCMB(Science)",
+    "instituteType1": 3,
+    "state1": "Maharashtra",
+    "district1": "Nandurbar",
+    "nameOfInstitute1": "Anudanit Aadivasi Ashram school, Indave",
+    "passingYear1": 2023,
+    "MarksObtain": 451,
+    "TotalMarks": 600,
+    "board2": "CBSC",
+    "Intype": 3,
+    "stat": "Maharashtra",
+    "InName": "Jawahar Navodaya Vidyalaya, Dhule",
+    "passyear": 2021,
+    "Marksobtain": 351,
+    "Totalmarks": 500,
+    "Parent": [
+      {
+        "Name": "Patil Vishwas Tukaram",
+        "Mobile": 8275591660,
+        "AnnualIncome": 40000,
+        "Relation": "Father",
+        "Qualification": "Class 12 Passed",
+        "Occupation": "Farmer"
+      },
+      {
+        "Name": "Patil Sima Vishwas",
+        "Mobile": 8275591660,
+        "AnnualIncome": 0,
+        "Relation": "Mother",
+        "Qualification": "Class 10",
+        "Occupation": "Housewife/Homemaker"
+      }
+    ],
+    "Reference": [
+      {
+        "Name": "Sujay",
+        "Mobile": "9373606334",
+        "Relation": "Others"
+      },
+      {
+        "Name": "Rahul",
+        "Mobile": "7767080838",
+        "Relation": "Others"
+      }
+    ],
+    "bank": [
+      {
+        "accountHolderName": "Divya Vishwas Patil",
+        "accountNumber": 597102010015529,
+        "ifscCode": "UBINO559717"
+      }
+    ]
+  },
+  {
+    "LoginType": "email",
+    "LoginValue": "manojshimpi027@gmail.com",
+    "Password": "Dream@9556",
+    "AlternateMobile": 9637264747,
+    "WhatsAppNumber": 9637264747,
+    "Category": "OBC", 
+    "AnnualFamilyIncome": 30000,
+    "PersonsWithDisabilities": "No",
+    "ParentalStatus": "Not Applicable",
+    "NumberOfSiblings": 2,
+    "Degree": "B.Tech",
+    "CourseDuration": 4,
+    "InstituteType": 2,
+    "CurrentAcademicYear": 1,
+    "CurrentAcademicSem": 1,
+    "State": "Maharashtra",
+    "District": "Dhule",
+    "InstitutionName": "R. C. Patel Institute of Technology, Shirpur",
+    "TotalCourseFee": 55000,
+    "PassingYear": 2027,
+    "board11": "Maharashtra Board",
+    "stream": "PCMB(Science)",
+    "instituteType1": 3,
+    "state1": "Maharashtra",
+    "district1": "Dhule",
+    "nameOfInstitute1": "Hr pati jr.college:shirpur",
+    "passingYear1": 2023,
+    "MarksObtain": 501,
+    "TotalMarks": 600,
+    "board2": "Maharashtra Board",
+    "Intype": 3,
+    "stat": "Maharashtra",
+    "InName": "R. C. Patel Urdu Primary School Shirpur",
+    "passyear": 2021,
+    "Marksobtain": 439,
+    "Totalmarks": 500,
+    "Parent": [
+      {
+        "Name": "Shijibai Shimpi",
+        "Mobile": 9637264747,
+        "AnnualIncome": 30000,
+        "Relation": "Father",
+        "Qualification": "Class 12 Passed",
+        "Occupation": "Farmer"
+      },
+      {
+        "Name": "Sita Shimpi",
+        "Mobile": 9637264747,
+        "AnnualIncome": 0,
+        "Relation": "Mother",
+        "Qualification": "Class 10 Passed",
+        "Occupation": "Housewife/Homemaker"
+      }
+    ],
+    "Reference": [
+      {
+        "Name": "Sujay",
+        "Mobile": "9373606334",
+        "Relation": "Others"
+      },
+      {
+        "Name": "Rahul",
+        "Mobile": "7767080838",
+        "Relation": "Others"
+      }
+    ],
+    "bank": [
+      {
+        "accountHolderName": "Manoj Shimpi",
+        "accountNumber": 62880110029303,
+        "ifscCode": "BARB0VJSPIN"
+      }
+    ]
+  }
+]

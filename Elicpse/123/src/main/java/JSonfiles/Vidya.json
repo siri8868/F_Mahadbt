@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Shravani Ajit Dhumal",
+    "date_of_birth": "06-08-2001",
+    "gender": "Female",
+    "category": "open",
+    "title": "Mr.",
+    "father_name": "Ajit Vinayak Dhumal",
+    "guardian": "Father",
+    "occupation": "Farmer",
+    "contact_number": "9876543210",
+    "salary": 50000,
+    "address": "Sikrapur",
+    "account_number": "7654897654",
+    "re_enter": "7654897654",
+    "name": "Shravani Ajit Dhumal"
+  },
+  {
+    "name": "Ankita HG deshmukh",
+    "date_of_birth": "06-03-2001",
+    "gender": "Female",
+    "category": "ST",
+    "title": "Mr.",
+    "father_name": "HG Ram deshmukh",
+    "guardian": "Father",
+    "occupation": "Business",
+    "contact_number": "7656789876",
+    "salary": 70000,
+    "address": "sikrapur",
+    "account_number": "8765432345",
+    "re_enter": "8765432345",
+    "name": "Ankita HG deshmukh" 
+  }
+]

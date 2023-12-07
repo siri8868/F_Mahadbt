@@ -1,0 +1,273 @@
+import java.io.File;
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.io.FileHandler;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+
+import net.sourceforge.tess4j.TesseractException;
+import net.sourceforge.tess4j.ITesseract;
+import net.sourceforge.tess4j.Tesseract;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
+
+
+
+
+public class Vidyasarthi {
+
+	public static <ITesseract> void main(String[] args) throws InterruptedException, IOException, TesseractException {
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Shravani\\OneDrive\\Pictures\\Auto\\Forstu_Automation\\Browser Extention\\chromedriver.exe");
+
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
+        WebDriver driver = new ChromeDriver(options);
+         driver.manage().window().maximize();
+
+      // Open URL Of "Vidyasarthi" ;
+        
+         driver.get("https://www.vidyasaarathi.co.in/Vidyasaarathi/index");
+        
+     //  Handle the PopUp ...
+         driver.findElement(By.xpath("//*[@id=\"modalSocial\"]/div/div/div[3]/a")).click();
+       
+     //  Login to Vidyasarthi  
+         driver.findElement(By.xpath("//*[@id=\"bs-example-navbar-collapse-1\"]/ul/li[8]/a")).click();
+    //   Switch to the new page
+         String mainWindowHandle = driver.getWindowHandle();
+           for (String handle : driver.getWindowHandles()) {
+              if (!handle.equals(mainWindowHandle)) {
+                 driver.switchTo().window(handle);
+                  break;
+           }
+       }
+       
+     //  driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[4]/a[1]")).click();
+         driver.findElement(By.id("username")).sendKeys("shravanidhumal8868@gmail.com");
+         driver.findElement(By.name("password")).sendKeys("Shravani@8868");
+         Thread.sleep(2000);
+         
+         try {
+        	 File src=driver.findElement(By.xpath("//*[@id=\"command\"]/div[8]/div[1]/div")).getScreenshotAs(OutputType.FILE);
+             String path=System.getProperty("user.dir")+"/screenshot/capcha.png";
+              
+               FileHandler.copy(src, new File(path));
+           //   
+
+             
+         //     ITesseract image = (ITesseract)  new Tesseract();  
+          //    String str =((Tesseract) image).doOCR(new File(path));
+            //  String imageText=((Tesseract) image).doOCR(new File(path)); 
+       //       System.out.println(str);
+        //     String Captcha= str.split("Refresh")[0].replaceAll("[^a-zA-Z0-9]", "");
+             // String captcha = new Tesseract().doOCR(new File("C:\\Users\\Shravani\\OneDrive\\Pictures\\Auto\\Forstu_Automation\\Elicpse\\123\\screenshot\\capcha.png")).replaceAll("[^a-zA-Z0-9]", "");
+              Tesseract tesseract = new Tesseract();
+            
+
+              tesseract.setDatapath("C:\\Users\\Shravani\\OneDrive\\Pictures\\Auto\\Forstu_Automation\\Elicpse\\123\\tessdata");
+              String capcha = tesseract.doOCR(new File("C:\\Users\\Shravani\\OneDrive\\Pictures\\Auto\\Forstu_Automation\\Elicpse\\123\\screenshot\\capcha.png")).replaceAll("[^a-zA-Z0-9]", " ");
+
+              Thread.sleep(2000);
+
+        	  driver.findElement(By.xpath("//*[@id=\"txtInput\"]")).sendKeys(capcha );
+
+              Thread.sleep(2000);
+        	 // Submit the login form
+               WebElement submitButton = driver.findElement(By.id("login"));
+               submitButton.click();
+               
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////               
+             //After Login new tab is open :  
+               driver.findElement(By.xpath("//*[@id=\"modalonlinetest\"]/div/div/div[2]/a")).click();
+               driver.findElement(By.xpath("//*[@id=\"myForm\"]/div[2]/div/div[2]/div/a[1]")).click();
+             
+               driver.findElement(By.id("fullName")).sendKeys("Shravani Ajit dhumal");
+            //   driver.findElement(By.id("dateOfBirth")).click();
+               
+           //Birthday date
+
+            // Locate the date picker input element
+            WebElement datePickerInput = driver.findElement(By.id("dateOfBirth"));
+
+            // Click on the date picker input to open the calendar
+            datePickerInput.click();
+
+            // Select the desired year
+            Select yearDropdown = new Select(driver.findElement(By.xpath("//*[@id=\"dateOfBirth_root\"]/div/div/div/div/div[1]/select[1]")));
+            yearDropdown.selectByVisibleText("2001"); // Replace '2001' with the desired year
+
+            // Select the desired month
+            Select monthDropdown = new Select(driver.findElement(By.xpath("//*[@id=\"dateOfBirth_root\"]/div/div/div/div/div[1]/select[2]")));
+            monthDropdown.selectByVisibleText("August"); // Replace 'August' with the desired month
+
+            // Select the desired day
+            WebElement desiredDay = driver.findElement(By.xpath("//*[@id=\"dateOfBirth_table\"]/tbody/tr[3]/td[4]/div")); 
+            desiredDay.click();
+//         Gender
+            driver.findElement(By.xpath("//*[@id=\"collapseOne\"]/div/div[5]/div/div/label[2]")).click();
+            Thread.sleep(1000);
+    //      Cast Dropdown 
+            Select cast=new Select(driver.findElement(By.id("category")));
+            cast.selectByIndex(6);
+            Thread.sleep(1000);
+        //  Marental status
+            Select status= new Select(driver.findElement(By.xpath("//*[@id=\"maritalStatus\"]")));
+            status.selectByIndex(2);
+            Thread.sleep(1000);
+        // Parent's/Guardians Details
+            Select title=new Select(driver.findElement(By.xpath("//*[@id=\"title\"]")));
+            title.selectByIndex(1);
+            Thread.sleep(1000);
+        // Name of parent 
+            driver.findElement(By.id("firstName")).sendKeys("Ajit");
+            Thread.sleep(1000);
+            driver.findElement(By.id("middleName")).sendKeys("Vinayak");
+            Thread.sleep(1000);
+            driver.findElement(By.id("lastName")).sendKeys("Dhumal");
+            Thread.sleep(1000);
+        //Relationship with student :
+            Select relation = new Select(driver.findElement(By.id("relationshipWithStudent")));
+            relation.selectByIndex(1);
+            Thread.sleep(1000);
+       // Occupation
+            Select occupation = new Select(driver.findElement(By.id("occupation")));
+            occupation.selectByIndex(4);
+            Thread.sleep(1000);
+       // Parents Mobile No:
+            driver.findElement(By.id("parentsMobileNo")).sendKeys("9049232910");
+            Thread.sleep(1000);
+       // Annual Family Income From All Sources:
+            driver.findElement(By.id("familyIncome")).sendKeys("50000");
+            Thread.sleep(1000);
+       // Communication Address:
+       // Address:
+            driver.findElement(By.id("address")).sendKeys("A/p Shikrapur");
+            Thread.sleep(1000);
+      //  Pin
+          //  Select pin = new Select(driver.findElement(By.id("pincode")));
+          //  pin.selectByIndex(3);
+            Thread.sleep(1000);
+            
+         // Locate the pin code autocomplete input field
+            WebElement pinCodeInput = driver.findElement(By.id("pincode")); // Replace "pincode" with the ID or appropriate locator of your input field
+
+            // Enter the pin code digits
+            pinCodeInput.sendKeys("412208"); // Replace "12345" with the first 5 digits of the desired pin code
+
+            // Wait for the suggestions to appear
+            Thread.sleep(2000); // Adjust the sleep duration as needed
+
+            // Simulate keyboard interaction to select the desired suggestion
+            pinCodeInput.sendKeys(Keys.ARROW_DOWN); // Press the down arrow key to highlight the first suggestion
+            pinCodeInput.sendKeys(Keys.ENTER); // Press the enter key to select the highlighted suggestion
+            
+            
+            
+            
+            
+            
+            
+      //  Village
+            
+          //  driver.findElement(By.id("village")).sendKeys("Hiware");
+          //  Thread.sleep(1000);
+      //  Block/Taluka /Sub-district/Town 
+           // driver.findElement(By.id("blockTaluka")).sendKeys("Shirur");
+         //   Thread.sleep(1000);
+      //  State
+         //   driver.findElement(By.id("")).sendKeys("Maharashtra");  
+          //  Thread.sleep(1000);
+            
+      //  Savings Bank Account Number:      
+            driver.findElement(By.id("bankAccNo")).sendKeys("12345678901234");
+            Thread.sleep(1000);
+      //  Re-enter Account Number  :
+            driver.findElement(By.id("reEnterBankAccNo")).sendKeys("12345678901234");
+            Thread.sleep(1000);
+    ////////////////////////////////////////////////
+         // Assuming you have instantiated the WebDriver and navigated to the desired webpage
+
+         // Locate the IFSC code autocomplete input field
+         WebElement ifscCodeInput = driver.findElement(By.id("ifscCode")); // Replace "ifsc" with the ID or appropriate locator of your input field
+
+         // Enter the first 5 letters of the IFSC code
+         ifscCodeInput.sendKeys("HDFC00028");
+
+         // Wait for the suggestions to appear
+         Thread.sleep(2000); 
+
+         // Simulate keyboard interaction to select the desired suggestion
+         ifscCodeInput.sendKeys(Keys.ARROW_DOWN); 
+         ifscCodeInput.sendKeys(Keys.ENTER);   
+            
+      //  IFSC Code
+        //    driver.findElement(By.id("ifscCode")).sendKeys("HDFC0002872");
+          //  Thread.sleep(1000);
+      //   Bank Name
+        //    driver.findElement(By.id("bankName")).sendKeys("Shikrapur");
+       //     Thread.sleep(1000);
+      //   Bank Branch:
+        //    driver.findElement(By.id("bankBranch")).sendKeys("Shikrapur");
+        //    Thread.sleep(1000);
+      //  Your name as per bank passbook:
+            driver.findElement(By.id("nameAsPerBankPassbook")).sendKeys("Shravani Ajit Dhumal"); 
+            Thread.sleep(1000);
+            
+          //  driver.findElement(By.id("saveProfile")).click();
+            Thread.sleep(3000);
+///////////////////////////////////////////////////////////////////////////////////////////
+             
+            driver.findElement(By.id("headingFour")).click();
+            
+            WebElement button = driver.findElement(By.xpath("//*[@id=\"collapseFour\"]/div/div[1]/div[2]/div/label/span")); // Replace "buttonId" with the ID or appropriate locator of the button
+            button.click(); 
+            
+            //DropDown 
+            Select courselevel=new Select(driver.findElement(By.id("currAcadCourseLevelId")));
+            courselevel.selectByIndex(4);
+            
+            //////Course name 
+         // Assuming you have instantiated the WebDriver and navigated to the desired webpage
+
+         // Locate the course name autocomplete input field
+         WebElement courseNameInput = driver.findElement(By.id("currAcadCourseLevelId")); // Replace "courseName" with the ID or appropriate locator of your input field
+
+         // Enter the letters of the course name
+         courseNameInput.sendKeys("BCA"); // Replace "Eng" with the letters of the desired course name
+
+         // Wait for the suggestions to appear
+         Thread.sleep(2000); // Adjust the sleep duration as needed
+
+         // Simulate keyboard interaction to select the desired suggestion
+         courseNameInput.sendKeys(Keys.ARROW_DOWN); // Press the down arrow key to highlight the first suggestion
+         courseNameInput.sendKeys(Keys.ENTER); // Press the enter key to select the highlighted suggestion
+/////////////////
+//         Total Current Fees
+          driver.findElement(By.id("currentFees")).sendKeys("45000");  
+          
+      //Are you in receipt of any other Scholarship from Govt. or any other institution?
+          WebElement button1 = driver.findElement(By.xpath("//*[@id=\"collapseFour\"]/div/div[14]/div/div")); 
+        //  button1.click();  
+            
+             
+          
+         }
+            catch(Exception e) {
+        	  System.out.println("exception caught :" +e.getMessage());   
+	          }
+         }
+}
+

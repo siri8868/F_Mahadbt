@@ -1,0 +1,90 @@
+[
+   {
+    "email": "ankitadeshmukh861@gmail.com",
+    "password": "Dream@9556",
+    "name": "Ankita HG deshmukh",
+    "date_of_birth": "2002-03-15",
+    "gender": "Female",
+    "category": "ST",
+    "title": "Mr.",
+    "father_name": "HG Ram deshmukh",
+    "guardian": "Father",
+    "occupation": "Business",
+    "contact_number": "7656789876",
+    "salary": 70000,
+    "address": "sikrapur",
+    "account_number": "8765432345",
+    "re_enter": "8765432345"
+  }
+  {
+ "email":"dhumalo800@gmail.com",
+ "password":"Dream@9556",
+ "name": "Onkr Ajit Dhum",
+ "date_of_birth": "2000-04-4",
+ "gender": "male",
+ "category": "ST",
+ "title": "Mr.",
+ "father_name": "A ram Dhum",
+ "guardian": "Father",
+ "occupation": "Farmer",
+ "contact_number": "8956789876",
+ "salary": 90000,
+ "address": "rampur",
+ "account_number": "7654432345",
+ "re_enter": "7654432345"
+}
+  {
+    "email": "shravanidhumal8868@gmail.com",
+    "password": "Dream@9556",
+    "name": "Shravani Ajit Dhumal",
+    "date_of_birth": "2003-08-9",
+    "gender": "Female",
+    "category": "open",
+    "title": "Mr.",
+    "father_name": "Ajit Vinayak Dhumal",
+    "guardian": "Father",
+    "occupation": "Farmer",
+    "contact_number": "9876543210",
+    "salary": 50000,
+    "address": "Sikrapur",
+    "account_number": "7654897654",
+    "re_enter": "7654897654"
+  }
+
+  {
+  "email": "vaishnavigajbar104@gmail.com",
+  "password": "@Vaishu1049",
+  "name": "Vaishnavi Vithal Gajbar",
+  "date_of_birth": "2001-03-06",
+  "gender": "Female",
+  "category": "NT",
+  "title": "Mr.",
+  "father_name": "Vithal Venkat Gajbar",
+  "guardian": "Father",
+  "occupation": "Business",
+  "contact_number": "9850860175",
+  "salary": 200000,
+  "address": "Bhugoan",
+  "account_number": "56789876543",
+  "re_enter": "56789876543"
+}
+ 
+{
+  "email": "shivanimelkunde@gmail.com",
+  "password": "Rohitb@123",
+  "name": "Shivani Rajkumar Melkunde",
+  "date_of_birth": "1999-06-11",
+  "gender": "Female",
+  "category": "Open",
+  "title": "Mr.",
+  "father_name": "Rajkumar Shivmvrti Melkunde",
+  "guardian": "Father",
+  "occupation": "Teacher",
+  "contact_number": "8275173535",
+  "salary": 300000,
+  "address": "Sakal Latur",
+  "account_number": "60393942887",
+  "re_enter": "60393942887"
+},
+
+]

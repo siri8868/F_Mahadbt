@@ -1,0 +1,108 @@
+[
+  {
+    "LoginType": "email",
+    "LoginValue": "sushantgurme@gmail.com",
+    "Password": "Sushant@75",
+    "AlternateMobile": "9878767867",
+    "WhatsAppNumber": "7678985640",
+    "Category": "OBC",
+    "AnnualFamilyIncome": 50007,
+    "PersonsWithDisabilities": "No",
+    "ParentalStatus":"Orphan",
+    "NumberOfSiblings": 2,  
+    "board11": "Maharashtra Board",
+    "stream": "PCM",
+    "state1": "Maharashtra",
+    "district1":"Pune",
+    "nameOfInstitute1":"LRG Palande College Pune",
+    "passingYear1": "2020",
+    "MarksObtain": 392,
+    "TotalMarks": 600,
+    "Degree": "B.Com",
+    "CurrentAcademicYear": 2,
+    "CurrentAcademicSem": 4,
+    "State": "Maharashtra",
+    "District": "Latur",
+    "InstitutionName":"MODERN COLLEGE",
+    "TotalCourseFee": 56000,
+    "PassingYear":2024,
+    "Parents": [
+  {
+    "Name": "Re Gurme",
+    "Mobile": "7887679890",
+    "AnnualIncome": 70000,
+    "Relation": "Father",
+    "Qualification":"Class 12",
+    "Occupation": "Farmer"
+  },
+  {
+    "Name": "Sima Gurme",
+    "Mobile": "8987679890",
+    "AnnualIncome": 10000,
+    "Relation": "Mother",
+    "Qualification":"Class 12",
+    "Occupation": "Housewife"
+  }
+  ],
+  "bank": [
+  {
+  "accountHolderName":"Jay adhalakar",
+  "accountNumber": "78765645341",
+  "ifscCode": "HDFC0006209"
+  }  
+  ],     
+}
+ {
+    "LoginType": "email",
+    "LoginValue": "sushantgurme@gmail.com",
+    "Password": "Sushant@75",
+    "AlternateMobile": "9878767867",
+    "WhatsAppNumber": "7678985640",
+    "Category": "OBC",
+    "AnnualFamilyIncome": 50007,
+    "PersonsWithDisabilities": "No",
+    "ParentalStatus":"Orphan",
+    "NumberOfSiblings": 2,  
+    "board11": "Maharashtra Board",
+    "stream": "PCM",
+    "state1": "Maharashtra",
+    "district1":"Pune",
+    "nameOfInstitute1":"LRG Palande College Pune",
+    "passingYear1": "2020",
+    "MarksObtain": 392,
+    "TotalMarks": 600,
+    "Degree": "B.Com",
+    "CurrentAcademicYear": 2,
+    "CurrentAcademicSem": 4,
+    "State": "Maharashtra",
+    "District": "Latur",
+    "InstitutionName":"MODERN COLLEGE",
+    "TotalCourseFee": 56000,
+    "PassingYear":2024,
+    "Parents": [
+  {
+    "Name": "Re Gurme",
+    "Mobile": "7887679890",
+    "AnnualIncome": 70000,
+    "Relation": "Father",
+    "Qualification":"Class 12",
+    "Occupation": "Farmer"
+  },
+  {
+    "Name": "Sima Gurme",
+    "Mobile": "8987679890",
+    "AnnualIncome": 10000,
+    "Relation": "Mother",
+    "Qualification":"Class 12",
+    "Occupation": "Housewife"
+  }
+  ],
+  "bank": [
+  {
+  "accountHolderName":"Jay adhalakar",
+  "accountNumber": "78765645341",
+  "ifscCode": "HDFC0006209"
+  }  
+  ],     
+}  
+]

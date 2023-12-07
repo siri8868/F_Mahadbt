@@ -1,0 +1,277 @@
+package JSonfiles;
+import java.io.FileReader;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
+
+public class Second_Test {
+	
+	
+	 public static  <WebDriverWait> void  main(String[] args) throws Exception {
+		 
+		  System.setProperty("webdriver.chrome.driver", "C:\\Users\\Shravani\\OneDrive\\Pictures\\Auto\\Forstu_Automation\\Browser Extention\\chromedriver.exe");
+
+	        ChromeOptions options = new ChromeOptions();
+	        options.addArguments("--remote-allow-origins=*");
+	        WebDriver driver = new ChromeDriver(options);
+	        driver.manage().window().maximize();
+	        
+	     // Open URL Of "Vidyasarthi"
+	        driver.get("https://www.vidyasaarathi.co.in/Vidyasaarathi/index");
+
+	         // Handle the PopUp
+	        driver.findElement(By.xpath("//*[@id=\"modalSocial\"]/div/div/div[3]/a")).click();
+
+	       //  Login to Vidyasarthi
+	        driver.findElement(By.xpath("//*[@id=\"bs-example-navbar-collapse-1\"]/ul/li[8]/a")).click();
+
+	        // Switch to the new page
+	        String mainWindowHandle = driver.getWindowHandle();
+	        for (String handle : driver.getWindowHandles()) {
+	            if (!handle.equals(mainWindowHandle)) {
+	                driver.switchTo().window(handle);
+	                break;
+	            }
+	        }
+	        try {
+	        	
+	        	
+	      //Read Data from json        
+	        JSONParser parser = new JSONParser();
+	        JSONArray jsonArray = (JSONArray) parser.parse(new FileReader("C:\\Users\\Shravani\\OneDrive\\Pictures\\Auto\\Forstu_Automation\\Elicpse\\123\\src\\main\\java\\JSonfiles\\Second.json"));
+            
+	        for (Object obj : jsonArray) {
+	            JSONObject userData = (JSONObject) obj;
+               
+	           
+	            
+	            
+	            // Extract user data from JSON object
+	            String email = (String) userData.get("email");
+	            String password = (String) userData.get("password");
+	            
+            // Find the input fields using the specified paths and enter the values
+	            
+	            WebElement emailInput = driver.findElement(By.id("username"));
+	            emailInput.sendKeys(email);
+
+	            WebElement passwordInput = driver.findElement(By.name("password"));
+	            passwordInput.sendKeys(password);
+	            
+	            
+	            
+	            Thread.sleep(13000);
+	         // Submit the login form
+	            WebElement submitButton = driver.findElement(By.id("login"));
+	            submitButton.click();
+	            Thread.sleep(3000);
+	            //close button popup
+	            driver.findElement(By.xpath("//*[@id=\"modalonlinetest\"]/div/div/div[2]/a")).click();
+	            
+	          
+	            
+	             //click on profile button 
+	             driver.findElement(By.xpath("//*[@id=\"studentMenu\"]/li[3]/a")).click();
+	             Thread.sleep(2000);
+	           
+	        
+	            String name = (String) userData.get("name"); 
+	            String dateOfBirth = (String) userData.get("date_of_birth");
+	            String gender = (String) userData.get("gender");
+	            String category = (String) userData.get("category");
+	            String title = (String) userData.get("title");
+	            String fatherName = (String) userData.get("father_name");
+	            String guardian = (String) userData.get("guardian");
+	            String occupation = (String) userData.get("occupation");
+	            String contactNumber = (String) userData.get("contact_number");
+	            Long salary = (Long) userData.get("salary");
+	            String address = (String) userData.get("address");
+	            String accountNumber = (String) userData.get("account_number");
+	            String reEnter = (String) userData.get("re_enter");
+	            String name1 = (String) userData.get("name");
+
+	            
+	             
+
+	/*            boolean isEntryIncomplete = true;  // Set the initial value based on your condition
+
+	      	             if (isEntryIncomplete) {
+	      	                 continue;  // Skip the current iteration if the entry is incomplete
+	      	             }
+	      	           try {
+	      	             // Perform operations for the complete entry
+	      	             System.out.println("Processing entry: " + userData);
+
+	      	             // Locate and interact with the element
+	      	             WebElement element = driver.findElement(By.xpath(".//*")); // Use XPath wildcard selector to locate any element
+	      	             // Perform desired operations with the element
+	      	             // ...
+
+	      	         } catch (NoSuchElementException e) {
+	      	             // Handle the exception when the locator is not found
+	      	             System.out.println("Locator not found. Skipping this operation.");
+	      	             continue;  // Skip the current iteration and move to the next entry
+	      	         }     
+	   */         
+	           
+	            
+	            WebElement fullNameField = driver.findElement(By.id("fullName"));
+	            fullNameField.sendKeys(name);
+
+	            // Locate the date picker input element
+	/*            WebElement datePickerInput = driver.findElement(By.id("dateOfBirth"));
+	           
+	            // Click on the date picker input to open the calendar
+	            datePickerInput.click();
+
+	            // Select the desired year
+	            Select yearDropdown = new Select(driver.findElement(By.xpath("//*[@id=\"dateOfBirth_root\"]/div/div/div/div/div[1]/select[1]")));
+	            yearDropdown.selectByVisibleText(dateOfBirth); // Replace '2001' with the desired year
+
+	            // Select the desired month
+	            Select monthDropdown = new Select(driver.findElement(By.xpath("//*[@id=\"dateOfBirth_root\"]/div/div/div/div/div[1]/select[2]")));
+	            monthDropdown.selectByVisibleText("August"); 
+
+	            // Select the desired day
+	            WebElement desiredDay = driver.findElement(By.xpath("//*[@id=\"dateOfBirth_table\"]/tbody/tr[3]/td[4]/div")); 
+	            desiredDay.click();
+*/
+	            if (gender.equalsIgnoreCase("Female")) {
+	                WebElement genderFemaleRadioButton = driver.findElement(By.xpath("//*[@id=\"collapseOne\"]/div/div[5]/div/div/label[2]"));
+	                genderFemaleRadioButton.click();
+	            }
+
+	        //    Select castDropdown = new Select(driver.findElement(By.id("category")));
+	         //   castDropdown.selectByVisibleText(category);
+
+	            Select cast=new Select(driver.findElement(By.id("category")));
+	            cast.selectByIndex(6);
+	            Thread.sleep(1000);
+	            
+	            Select titleDropdown = new Select(driver.findElement(By.xpath("//*[@id=\"title\"]")));
+	            titleDropdown.selectByVisibleText(title);
+
+	            WebElement fatherFirstNameField = driver.findElement(By.id("firstName"));
+	            fatherFirstNameField.sendKeys(fatherName.split(" ")[0]);
+
+	            WebElement fatherMiddleNameField = driver.findElement(By.id("middleName"));
+	            fatherMiddleNameField.sendKeys(fatherName.split(" ")[1]);
+
+	            WebElement fatherLastNameField = driver.findElement(By.id("lastName"));
+	            fatherLastNameField.sendKeys(fatherName.split(" ")[2]);
+
+	            Select relationDropdown = new Select(driver.findElement(By.id("relationshipWithStudent")));
+	            relationDropdown.selectByVisibleText(guardian);
+
+	            Select occupationDropdown = new Select(driver.findElement(By.id("occupation")));
+	            occupationDropdown.selectByVisibleText(occupation);
+
+	            WebElement contactNumberField = driver.findElement(By.id("parentsMobileNo"));
+	            contactNumberField.sendKeys(contactNumber);
+
+	            WebElement salaryField = driver.findElement(By.id("familyIncome"));
+	            salaryField.sendKeys(salary.toString());
+
+	            WebElement addressField = driver.findElement(By.id("address"));
+	            addressField.sendKeys(address);
+
+	            WebElement AccountNoField = driver.findElement(By.id("bankAccNo"));
+	            AccountNoField.sendKeys(accountNumber);
+	            
+	            WebElement ReAccountNoField = driver.findElement(By.id("reEnterBankAccNo"));
+	            ReAccountNoField.sendKeys(reEnter);
+	            
+	            WebElement BanknameField = driver.findElement(By.id("nameAsPerBankPassbook"));
+	            BanknameField.sendKeys(name1);
+	            
+	            //Save option 
+	  //        driver.findElement(By.xpath("//*[@id=\"saveProfile\"]")).click();
+	            
+//*******************************************************************************************************
+	            //Current Academic details
+	            
+	            driver.findElement(By.cssSelector("#headingFour .mb-0")).click();
+	            driver.findElement(By.cssSelector(".round:nth-child(1) .lever")).click();
+	 //         driver.findElement(By.xpath("//*[@id=\"currAcadCourseLevelId\"]")).click();
+	            driver.findElement(By.id("currAcadCourseLevelId")).click();
+	            Select courselevel = new Select(driver.findElement(By.id("currAcadCourseLevelId")));
+	            courselevel.selectByIndex(5);
+	            
+	       //     Thread.sleep(2000);
+	            driver.findElement(By.id("currAcadCourseNamelbl")).click();
+	            Select coursename =new Select(driver.findElement(By.id("currAcadCourseName")));
+	            coursename.deselectByValue("B.A.C");
+	          //  driver.findElement(By.id("currAcadCourseName")).sendKeys("B.C.A");
+	            Thread.sleep(3000);
+	            driver.findElement(By.cssSelector(".autocomplete-suggestion")).click();
+	            driver.findElement(By.id("currAcadInstituteName")).click();
+	            driver.findElement(By.id("currAcadInstituteName")).sendKeys("Progressive");
+	            driver.findElement(By.cssSelector(".autocomplete-selected")).click();
+	            driver.findElement(By.id("tutionFees")).click();
+	            driver.findElement(By.id("tutionFees")).sendKeys("50000");
+	            driver.findElement(By.id("nonTutionFees")).click();
+	            driver.findElement(By.id("nonTutionFees")).sendKeys("00000");
+	            driver.findElement(By.cssSelector(".switch:nth-child(3) .lever")).click();
+	            driver.findElement(By.cssSelector(".label_otherScholarshipName")).click();
+	            driver.findElement(By.id("otherScholarshipName")).sendKeys("Buddy4u");
+	            driver.findElement(By.id("otherScholarshipAmtlbl")).click();
+	            driver.findElement(By.id("otherScholarshipAmt")).sendKeys("10000");
+	            driver.findElement(By.id("saveProfile")).click();
+	            
+	            
+	//**********************************************************************************************************            
+	            
+	            
+	            
+	            
+	            driver.findElement(By.xpath("//*[@id=\"studentMenu\"]/li[8]/a")).click();
+	            // Output the uploaded data
+	            System.out.println("Uploaded Data:");
+	            System.out.println("Email: " + email);
+	            System.out.println("Password: " + password);
+	            System.out.println("Name: " + name);
+	            System.out.println("Date of Birth: " + dateOfBirth);
+	            System.out.println("Gender: " + gender);
+	            System.out.println("Category: " + category);
+	            System.out.println("Title: " + title);
+	            System.out.println("Father Name: " + fatherName);
+	            System.out.println("Guardian: " + guardian);
+	            System.out.println("Occupation: " + occupation);
+	            System.out.println("Contact Number: " + contactNumber);
+	            System.out.println("Salary: " + salary);
+	            System.out.println("Address: " + address);
+	            System.out.println("Account Number: " + accountNumber);
+	            System.out.println("Re-entered Account Number: " + reEnter);
+	            System.out.println("Name: " + name1);
+	            System.out.println();
+	        }
+	        }
+	       
+	     
+	        catch (NoSuchElementException e) {
+	            // Handle the exception when the locator is not found
+	            System.out.println("Locator not found. Skipping this operation.");
+	        }
+	        driver.findElement(By.xpath("//*[@id=\"studentMenu\"]/li[8]/a")).click();
+	        //driver.quit();
+			
+	    }
+
+		private static Object getMonthName(String string) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+	        
+     }
+  
