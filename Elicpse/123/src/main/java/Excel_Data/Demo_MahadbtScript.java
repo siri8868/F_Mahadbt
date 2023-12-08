@@ -50,7 +50,7 @@ public class Demo_MahadbtScript {
 	        
 	        
 	   
-	        File src = new File("C:\\Users\\Shravani\\Desktop\\Excel_data\\Ex.xlsx");
+	        File src = new File("src/main/java/Excel_Data/Excelsheet/Ex.xlsx");
 	        FileInputStream fis = new FileInputStream(src);
 	        
 	        XSSFWorkbook xsf = new XSSFWorkbook(fis);
@@ -681,7 +681,7 @@ public class Demo_MahadbtScript {
   			                
 				        	 //Do you have Income Certificate?:
 					            
-					            driver.findElement(By.xpath("//*[@id=\"IncomeDetails\"]/div[1]/div/label[2]/span")).click();
+					         driver.findElement(By.xpath("//*[@id=\"IncomeDetails\"]/div[1]/div/label[2]/span")).click();
 					            
 					          //Income Certificate No: 
 					           driver.findElement(By.id("IncomeCertNo")).sendKeys(String.valueOf(incomecerNo));

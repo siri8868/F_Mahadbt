@@ -57,7 +57,8 @@ public class DocumentMahadbt {
 	       // File src = new File("src/main/java/Excel_Data/Excelsheet/Ex.xlsx");
 	//      FileInputStream fis = new FileInputStream(src);
 	        
-	        File src = new File("C:\\Users\\Shravani\\Desktop\\Excel_data\\Ex.xlsx");
+	    //    File src = new File("C:\\Users\\Shravani\\Desktop\\Excel_data\\A2.xlsx");
+	        File src = new File("src/main/java/Excel_Data/Excelsheet/A2.xlsx");
 	        FileInputStream fis = new FileInputStream(src);
 	         
 	        XSSFWorkbook xsf = new XSSFWorkbook(fis);
@@ -89,12 +90,15 @@ public class DocumentMahadbt {
 	        //    long Incomedate   = (long) row.getCell(15).getNumericCellValue(); 
 	       
 	            
+	            
 	            long  Anualincome = (long) row.getCell(15).getNumericCellValue(); 
 	            String incer  = row.getCell(16).getStringCellValue();  
 	            long   incomecerNo  = (long) row.getCell(17).getNumericCellValue(); 
 	            String  IssAuthority = row.getCell(18).getStringCellValue();  
 	            String  s3UrlIncome = row.getCell(19).getStringCellValue(); 
 	            String  localFilePathincome = row.getCell(20).getStringCellValue(); 
+	            
+	            
 	            String Domacile = row.getCell(21).getStringCellValue(); 
 	            String domacileY = row.getCell(22).getStringCellValue(); 
 	            String  relationtype = row.getCell(23).getStringCellValue();  
@@ -424,7 +428,7 @@ public class DocumentMahadbt {
     			                
 				        	 //Do you have Income Certificate?:
 					            
-					            driver.findElement(By.xpath("//*[@id=\"IncomeDetails\"]/div[1]/div/label[2]/span")).click();
+					           driver.findElement(By.xpath("//*[@id=\"IncomeDetails\"]/div[1]/div/label[2]/span")).click();
 					            
 					          //Income Certificate No: 
 					           driver.findElement(By.id("IncomeCertNo")).sendKeys(String.valueOf(incomecerNo));
